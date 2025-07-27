@@ -16,5 +16,5 @@ jobs:
 
       - name: Reset branch to specific commit
         run: |
-          git reset --hard <good_commit_sha>
+          git reset --hard 111750258389eec6d57c0e545252d5c4ee711d12
           git push origin HEAD:refs/heads/main --force
