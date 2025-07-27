@@ -1,23 +1,21 @@
-# .github/workflows/reset.yml
-name: Force Reset to Commit
+name: Force Reset
 
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   reset:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # required for push
-
     steps:
-      - name: Checkout
+      - name: Checkout with default token
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GIT_TOKEN }}
           fetch-depth: 0
 
-      - name: Force reset to specific commit
+      - name: Reset to commit
         run: |
           git reset --hard 111750258389eec6d57c0e545252d5c4ee711d12
           git push origin HEAD:refs/heads/main --force
