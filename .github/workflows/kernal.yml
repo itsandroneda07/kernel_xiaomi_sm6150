@@ -30,7 +30,7 @@ jobs:
     - name: Download kernel source 
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git clone https://github.com/itsandroneda07/kernel_xiaomi_sm6150 kernel --depth=1 --branch main
+        git clone https://github.com/itsandroneda07/kernel_xiaomi_sm6150 kernel --depth=1 --branch lol
         
     - name: Compiling Kernel
       run: |
